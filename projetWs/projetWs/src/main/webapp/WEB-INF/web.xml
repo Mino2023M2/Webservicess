@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Projet</display-name>
+	<servlet>
+		<servlet-name>ServeletApp</servlet-name>
+		<servlet-class>com.metier.servelt.ServeletApp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServeletApp</servlet-name>
+		<url-pattern>/service</url-pattern>
+	</servlet-mapping>
+	<!--  <servlet>
+		<servlet-name>PersoneServiceImp</servlet-name>
+		<servlet-class>servelt.PersoneServiceImp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PersoneServiceImp</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	-->
+	<servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>io.swagger.v3.jaxrs2.integration.resources,com.metier</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/webapi/*</url-pattern>
+	</servlet-mapping>
+	
+  <absolute-ordering />
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+</web-app>
